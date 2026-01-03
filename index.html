@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Age Calculator</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="calculator">
+			<h1>Age Calculator</h1>
+			<div id="error-message" class="error-message"></div>
+			<div class="date-inputs">
+				<div class="input-group">
+					<label>Date of Birth</label>
+					<input type="date" id="start-date">
+				</div>
+				<div class="input-group">
+					<label>Calculate Age At</label>
+					<input type="date" id="end-date">
+				</div>
+			</div>
+			<div class="toggle-container">
+				<label class="toggle">
+					<input type="checkbox" id="use-current-date" checked>
+					<span class="toggle-slider"></span>
+					<span class="toggle-text">Use Current Date</span>
+				</label>
+			</div>
+			<button onclick="calculateAge()">Calculate Age</button>
+			<div class="result" id="result">
+				<div class="result-item">
+					<span class="number" id="years">--</span>
+					<span class="text">Years</span>
+				</div>
+				<div class="result-item">
+					<span class="number" id="months">--</span>
+					<span class="text">Months</span>
+				</div>
+				<div class="result-item">
+					<span class="number" id="days">--</span>
+					<span class="text">Days</span>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+      © 2025 Age Calculator — Built with ❤️ By <a href="https://in.linkedin.com/in/rahat-ansari-52409b223"
+        class="font-weight-bold" target="_blank">rTechCoding || Rahat
+        Ansari</a> for fun & learning
+    </footer>
+	</div>
+	
+	<script src="script.js"></script>
+</body>
+
+</html>
+   

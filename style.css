@@ -1,0 +1,247 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	background: linear-gradient(45deg, #4b356f, #29696a);
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 100%;
+	max-width: 450px;
+	padding: 20px;
+	
+}
+
+.calculator {
+	background: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGE1OHV6MGp0OWxrcjRpM2oxc2tvOWt4bnFkanc1eGduYnFsODNkeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xVn3ZmKrKIOLS/giphy.gif);
+	padding: 30px;
+	border-radius: 16px;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.error-message {
+	display: none;
+	background: rgba(255, 59, 48, 0.1);
+	border-left: 4px solid #ff3b30;
+	color: #ff3b30;
+	padding: 12px;
+	margin-bottom: 20px;
+	border-radius: 0 8px 8px 0;
+	font-size: 14px;
+	animation: slideIn 0.3s ease-out;
+}
+
+.error-message.show {
+	display: block;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+h1 {
+	color: #fff;
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 28px;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.date-inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+label {
+	color: #fff;
+	font-size: 14px;
+	opacity: 0.9;
+}
+
+input[type="date"] {
+	width: 100%;
+	padding: 15px;
+	border: none;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	color: #fff;
+	font-size: 16px;
+	outline: none;
+	transition: all 0.3s ease;
+}
+
+input[type="date"]:focus {
+	background: rgba(255, 255, 255, 0.15);
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.toggle-container {
+	margin-bottom: 20px;
+}
+
+.toggle {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+}
+
+.toggle input {
+	display: none;
+}
+
+.toggle-slider {
+	position: relative;
+	width: 50px;
+	height: 26px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 13px;
+	transition: 0.3s;
+}
+
+.toggle-slider:before {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: #4caf50;
+	border-radius: 50%;
+	transition: 0.3s;
+}
+
+.toggle input:checked + .toggle-slider:before {
+	transform: translateX(24px);
+}
+
+.toggle-text {
+	color: #fff;
+	font-size: 14px;
+}
+
+button {
+	width: 100%;
+	padding: 15px;
+	background: linear-gradient(45deg, #0d7a78, #a7a754);
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+button:hover {
+	background: linear-gradient(45deg, #313d78, #4c94af);
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.result {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.result-item {
+	flex: 1;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.05);
+	padding: 20px;
+	border-radius: 12px;
+	transition: all 0.3s ease;
+}
+
+.result-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.number {
+	display: block;
+	color: #4caf50;
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.text {
+	color: #fff;
+	font-size: 14px;
+	opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+	.container {
+		padding: 10px;
+	}
+
+	.calculator {
+		padding: 20px;
+	}
+
+	.result {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.number {
+		font-size: 28px;
+	}
+}
+.footer {
+      text-align: center;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 12px;
+      background: linear-gradient(90deg, #b28ef6, #00bcd4);
+      color: #04122a;
+      border-radius: 6px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      font-weight: 500;
+    }
+	input[type="date"] {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+/* Fix calendar icon visibility */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
